@@ -16,14 +16,14 @@ def main():
     evo_low = get_new_price("EVO.ST")
     evo_high = evo_low
     current_time = strftime('%H:%M:%S', localtime())
-    print(f"[{current_time}] Tjena Jojje! EVO just nu på: {evo_old}\n")
+    print(f"[{current_time}] Tjena Jojje! EVO just nu på: {evo_low}\n")
     while True:
         evo_new = get_new_price("EVO.ST")
         if evo_new < evo_low:
             current_time = strftime('%H:%M:%S', localtime())
             print(f"[{current_time}] Jojje bros... It's over")
             print(f"EVO just nu på: {evo_new}\n")
-            evo_old = evo_new
+            evo_low = evo_new
         elif evo_new > evo_high:
             current_time = strftime('%H:%M:%S', localtime())
             print(f"[{current_time}] Jojje bros... We won!")
